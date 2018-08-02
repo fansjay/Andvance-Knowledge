@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasePhone.cs" />
+    <Compile Include="HuaWei.cs" />
+    <Compile Include="IPay.cs" />
+    <Compile Include="Iphone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
