@@ -10,7 +10,7 @@ namespace AbstractClass
     {
         static void Main(string[] args)
         {
-
+            //抽象类
 
         }
     }
