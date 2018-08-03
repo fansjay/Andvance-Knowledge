@@ -12,6 +12,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "..\WCFDemo\UnitWCFTest\UnitTest.csproj", "{05970813-DB48-45AC-B929-BFBEAFBD4E24}"
 	ProjectSection(ProjectDependencies) = postProject
 		{349D3101-AA79-45A3-AC03-6F21A3B7A74D} = {349D3101-AA79-45A3-AC03-6F21A3B7A74D}
+		{A93EEC05-A1BE-42D9-BF7C-82D997257ECE} = {A93EEC05-A1BE-42D9-BF7C-82D997257ECE}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{349D3101-AA79-45A3-AC03-6F21A3B7A74D}"
@@ -23,6 +24,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWebApplication", "CoreWebApplication\CoreWebApplication.csproj", "{8A5C7DCB-A8CE-47F2-9B61-C77E2846046B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucene", "Lucene\Lucene.csproj", "{EAE1AC3A-2BBC-49E5-B659-E89EDB0A5942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWCFService", "WebWCFService\WebWCFService.csproj", "{A93EEC05-A1BE-42D9-BF7C-82D997257ECE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +69,10 @@ Global
 		{EAE1AC3A-2BBC-49E5-B659-E89EDB0A5942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAE1AC3A-2BBC-49E5-B659-E89EDB0A5942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAE1AC3A-2BBC-49E5-B659-E89EDB0A5942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A93EEC05-A1BE-42D9-BF7C-82D997257ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A93EEC05-A1BE-42D9-BF7C-82D997257ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A93EEC05-A1BE-42D9-BF7C-82D997257ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A93EEC05-A1BE-42D9-BF7C-82D997257ECE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
