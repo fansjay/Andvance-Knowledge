@@ -40,6 +40,7 @@
             this.Btn_AsyncAwait = new System.Windows.Forms.Button();
             this.Btn_ThreadXiangGuan = new System.Windows.Forms.Button();
             this.Btn_MutiThreadVariable = new System.Windows.Forms.Button();
+            this.Btn_progress = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Sync
@@ -152,11 +153,22 @@
             this.Btn_MutiThreadVariable.UseVisualStyleBackColor = true;
             this.Btn_MutiThreadVariable.Click += new System.EventHandler(this.Btn_MutiThreadVariable_Click);
             // 
+            // Btn_progress
+            // 
+            this.Btn_progress.Location = new System.Drawing.Point(414, 61);
+            this.Btn_progress.Name = "Btn_progress";
+            this.Btn_progress.Size = new System.Drawing.Size(102, 36);
+            this.Btn_progress.TabIndex = 10;
+            this.Btn_progress.Text = "双进度条";
+            this.Btn_progress.UseVisualStyleBackColor = true;
+            this.Btn_progress.Click += new System.EventHandler(this.Btn_progress_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 554);
+            this.Controls.Add(this.Btn_progress);
             this.Controls.Add(this.Btn_MutiThreadVariable);
             this.Controls.Add(this.Btn_ThreadXiangGuan);
             this.Controls.Add(this.Btn_AsyncAwait);
@@ -188,6 +200,7 @@
         private System.Windows.Forms.Button Btn_AsyncAwait;
         private System.Windows.Forms.Button Btn_ThreadXiangGuan;
         private System.Windows.Forms.Button Btn_MutiThreadVariable;
+        private System.Windows.Forms.Button Btn_progress;
     }
 }
 

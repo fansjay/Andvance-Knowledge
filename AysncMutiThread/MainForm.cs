@@ -314,24 +314,25 @@ namespace AysncMutiThread
         /// <param name="e"></param>
         private async void Btn_AsyncAwait_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(string.Format("进入Btn_AsyncAwait_Click方法,线程ID{0}", Thread.CurrentThread.ManagedThreadId));
+            Console.WriteLine(string.Format("【1】进入Btn_AsyncAwait_Click方法,线程ID{0}", Thread.CurrentThread.ManagedThreadId));
             string str = await AsyncMethod();//跟调用普通方法没有区别
-            Console.WriteLine(str);
-            Console.WriteLine(string.Format("离开Btn_AsyncAwait_Click方法,线程ID{0}", Thread.CurrentThread.ManagedThreadId));
+            Console.WriteLine("【7】"+str);
+            Console.WriteLine(string.Format("【8】离开Btn_AsyncAwait_Click方法,线程ID{0}", Thread.CurrentThread.ManagedThreadId));
         }
         private async Task<string> AsyncMethod() //如果有返回值string:Task<string>
         {
             string temp = "V";
-            Console.WriteLine(string.Format("进入AsyncMethod方法，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
+            Console.WriteLine(string.Format("【2】进入AsyncMethod方法，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
             TaskFactory taskFactory = new TaskFactory();
             Task task = taskFactory.StartNew(() =>
             {
-                Console.WriteLine(string.Format("Task子线程方法，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
+                Console.WriteLine(string.Format("【4】Task子线程方法，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
                 Thread.Sleep(5000);
-                Console.WriteLine(string.Format("Task子线程休息5秒后执行，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
+                Console.WriteLine(string.Format("【5】Task子线程休息5秒后执行，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
             });
+            Console.WriteLine("【3】这一行代码是什么时候执行呢？是不是在【2】和【3】之间执行呢？我认为是！");
             await task;//主线程会等待 Task执行完以后才会继续执行
-            Console.WriteLine(string.Format("离开AsyncMethod方法，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
+            Console.WriteLine(string.Format("【6】离开AsyncMethod方法，线程ID：{0}", Thread.CurrentThread.ManagedThreadId));
             return temp;
         }
 
@@ -412,6 +413,12 @@ namespace AysncMutiThread
                 int k = i;
                 Task.Run(()=>action(k/*i*/));//这样就可以了
             }
+        }
+
+        private void Btn_progress_Click(object sender, EventArgs e)
+        {
+            TwoProgressForm twoProgressForm = new TwoProgressForm();
+            twoProgressForm.Show();
         }
     }
 }

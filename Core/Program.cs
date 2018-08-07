@@ -15,9 +15,9 @@ namespace Core
             Console.WriteLine($"年龄:{age}");
 
             //空值运算符 不需要判断是否为空
-            string temp = "324324";
-            Console.WriteLine(temp?.ToString());
-
+            string temp = null;
+            Console.WriteLine(temp?.ToString()); //如果temp为空则不输出temp
+            Console.WriteLine("temp没有输出null");
 
             //索引
             var dic = new Dictionary<int, string>()
