@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Core
@@ -53,23 +54,57 @@ namespace Core
             Console.WriteLine($"我有人民币{Money}元");
             #endregion
 
-
+            #region JSON  
             Address address = Address.CreateAddress("China", "000000", "Shenzhen", "LongGang", Constants.Roles.Administrator, 98,DateTime.Now);
-
-
-
-
             JsonSerializerSettings serializerSettings = new JsonSerializerSettings();
             serializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
 
             //【如果设置serializerSettings】 打印出来的结果为【{"Country":"China","PostCode":"000000","Street":"LongGang","StreetNumber":"90006","Floor":98}】
             //【如果没有设置serializerSettings】打印出来的结果为{"Country":"China","PostCode":"000000","Street":"LongGang","StreetNumber":"90006","Floor":98}
-            string addressString = JsonConvert.SerializeObject(address); 
+            string addressString = JsonConvert.SerializeObject(address);
             Console.WriteLine(addressString);
-            var a= JsonConvert.DeserializeObject<Address>(addressString);
+            var a = JsonConvert.DeserializeObject<Address>(addressString);
             Console.WriteLine($"城市:{a.City}");
+            #endregion
 
+            #region 字典、哈希表、 堆、栈、队列
 
+            Dictionary<string, string> dics = new Dictionary<string, string>() {  };
+
+            //哈希表 【0001 -->  苍井空 ---> 日本 ----> 28】 支持多线程读出
+            Hashtable hashtable = new Hashtable();
+            hashtable.Add("", 100);
+
+            //队列 【先来的先出去 连续性 压进】
+            Queue<string> stringQueue = new Queue<string>();
+            stringQueue.Enqueue("123"); stringQueue.Enqueue("458"); stringQueue.Enqueue("哈哈"); stringQueue.Enqueue("Hello");
+            foreach (var item in stringQueue)
+            {
+                Console.WriteLine(item);
+            }
+            stringQueue.Dequeue();
+            Console.WriteLine("---------------");
+            foreach (var item in stringQueue)
+            {
+                Console.WriteLine(item);
+            }
+
+            //堆、栈 （一摞）【先进后出】
+            Stack<string> stringStack = new Stack<string>();
+            stringStack.Push("stack1"); stringStack.Push("stack2"); stringStack.Push("stack3"); stringStack.Push("stack4");         
+            foreach (var item in stringQueue)
+            {
+                Console.WriteLine(item);
+            }
+            stringStack.Pop();
+            Console.WriteLine("---------------");
+            foreach (var item in stringStack)
+            {
+                Console.WriteLine(item);
+            }
+
+          
+            #endregion
 
 
 

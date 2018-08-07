@@ -37,12 +37,14 @@ namespace MVCLucene.Controllers
 
 
 
-
-        private void AddIndexDirectory(string DirName)
+        public ActionResult Test()
         {
-           
-           indexWriter = new IndexWriter(DirName, new PanGuAnalyzer(),false);
+            //这里故意出错
+            int a=100, b=0;
+            int c = a / b;
+            return Content("test");
         }
+       
 
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace MVCLucene.Controllers
                 document.Add(new Field("Datetime", Datetime, Field.Store.YES, Field.Index.NOT_ANALYZED));
                 document.Add(new Field("URL", URL, Field.Store.YES, Field.Index.NOT_ANALYZED)); //不会生产索引
                 indexWriter.AddDocument(document);
+
             }
             catch (Exception ex)
             {
